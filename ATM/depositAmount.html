@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WITHDRAWAL</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 box-color mt-3">
+                <div class="row p-2">
+                    <div class="col-lg-12 pt-2 bg-dark" >
+                        <div class="p-2 backDisplay" style="height: 50vh;">
+                                <p class="text-white text-center bg-info" style="font-size: 25px; font-weight: bold;">
+                                    Enter the Amount to Deposit</p>
+                            <div class="row" id="depositDisplay">
+                                <h6 class="text-center text-dark">Please enter the amount multiple of 100 Rs.</h6>
+                                <div class="col-lg-6 offset-lg-3">
+                                    <p class="text-center mt-4" style="font-size: 35px; font-weight: bold;">
+                                        Rs. <span id="enteredAmount"></span></p>
+                                        <input type="hidden" id="amountValue">
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="col-lg-12 d-grid"><a onclick="numButton(100)" class="btn btn-secondary mt-2 p-3">100</a></div>
+                                            <div class="col-lg-12 d-grid"><a onclick="numButton(500)" class="btn btn-secondary mt-2  p-3">500</a></div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="col-lg-12 d-grid"><a onclick="numButton(1000)" class="btn btn-secondary mt-2 p-3">1000</a></div>
+                                            <div class="col-lg-12 d-grid"><a onclick="numButton(5000)" class="btn btn-secondary mt-2 p-3">5000</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="messageInfo" style="display: none;">
+                                <h5 class="text-center text-dark">Please wait your transaction in process...
+                                    <span id="messageInfo2" class="spinner-border" role="status"></span></h5>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 bg-dark p-2">
+                        <div class="row">
+                            <div class="col-lg-8 d-flex">
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(1)" class="btn btn-outline-secondary p-3 bgColor numText">1</a></div>
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(2)" class="btn btn-outline-secondary p-3 bgColor numText">2</a></div>
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(3)" class="btn btn-outline-secondary p-3 bgColor numText">3</a></div>
+                            </div>
+                            <div class="col-lg-4 d-grid">
+                                <a href="index.html"  class="btn btn-danger border-white p-3">CANCLE</a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-lg-8 d-flex">
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(4)" class="btn btn-outline-secondary p-3 bgColor numText">4</a></div>
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(5)" class="btn btn-outline-secondary p-3 bgColor numText">5</a></div>
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(6)" class="btn btn-outline-secondary p-3 bgColor numText">6</a></div>
+                            </div>
+                            <div class="col-lg-4 d-grid">
+                                <a onclick="clean(0)" class="btn btn-warning border-white p-3">CLEAR</a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-lg-8 d-flex">
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(7)" class="btn btn-outline-secondary p-3 bgColor numText">7</a></div>
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(8)" class="btn btn-outline-secondary p-3 bgColor numText">8</a></div>
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(9)" class="btn btn-outline-secondary p-3 bgColor numText">9</a></div>
+                            </div>
+                            <div class="col-lg-4 d-grid ">
+                                <a onclick="addDeposit()" class="btn btn-success border-white p-3">ENTER</a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-lg-8 d-flex">
+                                <div class="col-lg-4 d-grid mx-1"><a class="btn btn-outline-secondary p-3 bgColor numText">*</a></div>
+                                <div class="col-lg-4 d-grid mx-1"><a onclick="numButton(0)" class="btn btn-outline-secondary p-3 bgColor numText">0</a></div>
+                                <div class="col-lg-4 d-grid mx-1"><a class="btn btn-outline-secondary p-3 bgColor numText">#</a></div>
+                            </div>
+                            <div class="col-lg-4 d-grid ">
+                                <a class="btn btn-info border-white p-3">  <<  </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

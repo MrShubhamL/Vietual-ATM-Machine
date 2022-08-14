@@ -1,0 +1,32 @@
+.inputBox{
+    border: none;
+    width: 100%;
+    height: 60px;
+    padding: 30px;
+}
+
+.bgColor{
+    color: #000;
+    background-color: white;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.bgColor:hover{
+    color: #000;
+    background-color: rgb(243, 243, 243);
+    box-shadow: inset 0 0 12px #000000;
+}
+
+.numText{
+ font-size: 20px;
+ font-weight: bold;
+}
+
+.backDisplay{
+    background-color: rgb(208, 247, 226);
+    box-shadow: inset 0 0 15px #1c331fb9;
+}
+
+.box-color{
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
